@@ -170,25 +170,5 @@ backend/
 * People Fed Estimation
 * NGO Recommendation System
 
----
 
-## 📊 Future Enhancements
-
-* Google Maps Integration
-* Real-Time NGO Tracking
-* Mobile Application
-* Food Demand Forecasting
-* Food Quality Detection using Computer Vision
-* Smart NGO Recommendation Engine
-* Multi-City Deployment
-
----
-
-## 🎯 Expected Impact
-
-* Reduce food wastage
-* Improve food redistribution efficiency
-* Support NGOs and shelters
-* Feed more people using surplus food
-* Promote sustainable food management
 
