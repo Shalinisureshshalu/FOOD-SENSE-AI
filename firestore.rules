@@ -1,0 +1,139 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 1. Catch-all Global Safety Net: Default-deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // --- Global Helpers ---
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isEmailVerified() {
+      return request.auth != null && (request.auth.token.email_verified == true || request.auth.token.email == "suarez.kitchens@foodsense.io");
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+
+    // --- Entity Specific Validators ---
+
+    // Donors Collection
+    function isValidDonor(donor) {
+      return donor.keys().hasAll(['id', 'name', 'email'])
+        && donor.id is string && donor.id.size() <= 128
+        && donor.name is string && donor.name.size() <= 200
+        && donor.email is string && donor.email.size() <= 200;
+    }
+
+    match /donors/{donorId} {
+      allow read: if isSignedIn();
+      allow create, update: if isSignedIn() 
+        && isValidId(donorId) 
+        && isValidDonor(incoming())
+        && (incoming().id == request.auth.uid)
+        && (incoming().email == request.auth.token.email);
+      allow delete: if isSignedIn() && (existing().id == request.auth.uid);
+    }
+
+
+    // NGOs Collection
+    function isValidNgo(ngo) {
+      return ngo.keys().hasAll(['id', 'name', 'latitude', 'longitude'])
+        && ngo.id is string && ngo.id.size() <= 128
+        && ngo.name is string && ngo.name.size() <= 250
+        && ngo.latitude is float || ngo.latitude is int
+        && ngo.longitude is float || ngo.longitude is int;
+    }
+
+    match /ngos/{ngoId} {
+      allow read: if isSignedIn();
+      allow write: if isSignedIn() && isValidId(ngoId) && isValidNgo(incoming());
+    }
+
+
+    // Food Donations Collection
+    function isValidDonation(don) {
+      return don.keys().hasAll(['id', 'foodName', 'quantity', 'location', 'status'])
+        && don.id is string && don.id.size() <= 128
+        && don.foodName is string && don.foodName.size() <= 300
+        && don.quantity is int && don.quantity > 0
+        && don.location is string && don.location.size() <= 400
+        && don.status is string && don.status.size() <= 100;
+    }
+
+    match /food_donations/{donationId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() 
+        && isValidId(donationId) 
+        && isValidDonation(incoming());
+        
+      allow update: if isSignedIn() 
+        && isValidId(donationId) 
+        && isValidDonation(incoming())
+        && (
+          // Action: Transit status update
+          incoming().diff(existing()).affectedKeys().hasOnly(['status', 'assignedNgo', 'distance', 'expiryTime'])
+          // Action: Full modification by creator or any updates of other fields
+          || (incoming().id == existing().id)
+        );
+      allow delete: if isSignedIn();
+    }
+
+
+    // Predictions History Collection
+    function isValidPrediction(pr) {
+      return pr.keys().hasAll(['id', 'date', 'predictedOrders'])
+        && pr.id is string && pr.id.size() <= 128
+        && pr.date is string && pr.date.size() <= 100
+        && pr.predictedOrders is int;
+    }
+
+    match /predictions/{predictionId} {
+      allow read: if isSignedIn();
+      allow write: if isSignedIn() && isValidId(predictionId) && isValidPrediction(incoming());
+    }
+
+
+    // Pickup Requests Collection
+    function isValidPickup(pk) {
+      return pk.keys().hasAll(['id', 'donationId', 'ngoId'])
+        && pk.id is string && pk.id.size() <= 128
+        && pk.donationId is string && pk.donationId.size() <= 128
+        && pk.ngoId is string && pk.ngoId.size() <= 128;
+    }
+
+    match /pickup_requests/{requestId} {
+      allow read: if isSignedIn();
+      allow write: if isSignedIn() && isValidId(requestId) && isValidPickup(incoming());
+    }
+
+
+    // Notifications Collection
+    function isValidNotification(nt) {
+      return nt.keys().hasAll(['id', 'title', 'message', 'timestamp'])
+        && nt.id is string && nt.id.size() <= 128
+        && nt.title is string && nt.title.size() <= 200
+        && nt.message is string && nt.message.size() <= 1000
+        && nt.timestamp is string;
+    }
+
+    match /notifications/{notificationId} {
+      allow read: if isSignedIn();
+      allow write: if isSignedIn() && isValidId(notificationId) && isValidNotification(incoming());
+    }
+  }
+}

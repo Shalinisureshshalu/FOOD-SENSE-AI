@@ -1,0 +1,137 @@
+{
+  "entities": {
+    "Donor": {
+      "title": "Donor",
+      "description": "Profile info for surplus donors",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "organization": { "type": "string" },
+        "role": { "type": "string" }
+      },
+      "required": ["id", "name", "email"]
+    },
+    "Ngo": {
+      "title": "Ngo",
+      "description": "Organizations recovering surplus food",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "capacity": { "type": "integer" },
+        "contact": { "type": "string" },
+        "supported_types": { "type": "array" }
+      },
+      "required": ["id", "name", "latitude", "longitude"]
+    },
+    "FoodDonation": {
+      "title": "FoodDonation",
+      "description": "Active surplus food posts rescued from kitchen",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "foodName": { "type": "string" },
+        "quantity": { "type": "integer" },
+        "foodType": { "type": "string" },
+        "expiryTime": { "type": "string" },
+        "location": { "type": "string" },
+        "contact": { "type": "string" },
+        "status": { "type": "string" },
+        "assignedNgo": { "type": "string" },
+        "distance": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "co2Saved": { "type": "number" }
+      },
+      "required": ["id", "foodName", "quantity", "location", "status"]
+    },
+    "Prediction": {
+      "title": "Prediction",
+      "description": "Historical ML prediction records",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "date": { "type": "string" },
+        "week": { "type": "integer" },
+        "centerId": { "type": "string" },
+        "mealId": { "type": "string" },
+        "checkoutPrice": { "type": "number" },
+        "basePrice": { "type": "number" },
+        "emailPromotion": { "type": "boolean" },
+        "homepageFeatured": { "type": "boolean" },
+        "cityCode": { "type": "string" },
+        "regionCode": { "type": "string" },
+        "operationalArea": { "type": "number" },
+        "category": { "type": "string" },
+        "cuisine": { "type": "string" },
+        "centerType": { "type": "string" },
+        "predictedOrders": { "type": "integer" },
+        "predicted_demand": { "type": "integer" },
+        "demandLevel": { "type": "string" },
+        "demand_level": { "type": "string" },
+        "inventoryAction": { "type": "string" },
+        "pickup_priority": { "type": "string" },
+        "aiInsights": { "type": "array" }
+      },
+      "required": ["id", "date", "predictedOrders"]
+    },
+    "PickupRequest": {
+      "title": "PickupRequest",
+      "description": "Logistics pickup transits",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "donationId": { "type": "string" },
+        "ngoId": { "type": "string" },
+        "ngoName": { "type": "string" },
+        "status": { "type": "string" },
+        "distance": { "type": "string" },
+        "estimatedTime": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["id", "donationId", "ngoId"]
+    },
+    "Notification": {
+      "title": "Notification",
+      "description": "System real time alert feed",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "message": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "type": { "type": "string" }
+      },
+      "required": ["id", "title", "message", "timestamp"]
+    }
+  },
+  "firestore": {
+    "donors/{donorId}": {
+      "schema": "Donor",
+      "description": "Profiles for donor registrations"
+    },
+    "ngos/{ngoId}": {
+      "schema": "Ngo",
+      "description": "Profiles for ngo rescue entities"
+    },
+    "food_donations/{donationId}": {
+      "schema": "FoodDonation",
+      "description": "Storage for active surplus food rescues"
+    },
+    "predictions/{predictionId}": {
+      "schema": "Prediction",
+      "description": "Historical analytical scenario forecast logs"
+    },
+    "pickup_requests/{requestId}": {
+      "schema": "PickupRequest",
+      "description": "Live courier tracking assignments"
+    },
+    "notifications/{notificationId}": {
+      "schema": "Notification",
+      "description": "Alert signals dispatched across portals"
+    }
+  }
+}

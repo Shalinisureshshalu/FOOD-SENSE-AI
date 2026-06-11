@@ -1,0 +1,6 @@
+{
+  "name": "FoodSense AI",
+  "description": "Intelligent Food Demand Forecasting Platform powered by AI to optimize inventory, predict orders, and reduce waste.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

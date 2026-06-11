@@ -1,0 +1,268 @@
+{
+    "donors": [],
+    "ngos": [],
+    "food_donations": [
+        {
+            "id": "fs-donation-1781147332458",
+            "foodName": "curdrice",
+            "quantity": 44,
+            "foodType": "Vegetarian Meals",
+            "expiryTime": "Expires in 2 Hours",
+            "location": "Anna Nagar, Chennai",
+            "contact": "+91 98402 12345",
+            "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&auto=format&fit=crop&q=60",
+            "status": "En-Route",
+            "assignedNgo": "Care-Share Community Kitchens",
+            "distance": "0.5 km",
+            "timestamp": "2026-06-11T03:08:52.498139Z",
+            "co2Saved": 19.8
+        },
+        {
+            "id": "fs-donation-1781149910368",
+            "foodName": "Lemon Rice",
+            "quantity": 30,
+            "foodType": "Vegetarian Meals",
+            "expiryTime": "Expires in 5 Hours",
+            "location": "Anna Nagar, Chennai",
+            "contact": "+91 98402 12345",
+            "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&auto=format&fit=crop&q=60",
+            "status": "NGO Assigned",
+            "assignedNgo": "Care-Share Community Kitchens",
+            "distance": "1.2 km",
+            "timestamp": "2026-06-11T03:51:50.372130Z",
+            "co2Saved": 13.5
+        },
+        {
+            "id": "fs-donation-1781149946345",
+            "foodName": "Saved Excess 35 Kg (70 Meals) - Wedding Hall",
+            "quantity": 35,
+            "foodType": "Mixed",
+            "expiryTime": "Expires in 4 Hours",
+            "location": "Community Rescue Center, Hub A",
+            "contact": "+91 94451 09876",
+            "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&auto=format&fit=crop&q=60",
+            "status": "NGO Assigned",
+            "assignedNgo": "Care-Share Community Kitchens",
+            "distance": "1.2 km",
+            "timestamp": "2026-06-11T03:52:26.345939Z",
+            "co2Saved": 15.8
+        },
+        {
+            "id": "fs-donation-1781150210770",
+            "foodName": "Biriyani",
+            "quantity": 30,
+            "foodType": "Vegetarian Meals",
+            "expiryTime": "Expires in 5 Hours",
+            "location": "Anna Nagar, Chennai",
+            "contact": "+91 98402 12345",
+            "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&auto=format&fit=crop&q=60",
+            "status": "NGO Assigned",
+            "assignedNgo": "Care-Share Community Kitchens",
+            "distance": "1.2 km",
+            "timestamp": "2026-06-11T03:56:50.770761Z",
+            "co2Saved": 13.5
+        },
+        {
+            "id": "fs-donation-1781150280971",
+            "foodName": "Saved Excess 35 Kg (70 Meals) - Wedding Hall",
+            "quantity": 35,
+            "foodType": "Mixed",
+            "expiryTime": "Expires in 4 Hours",
+            "location": "Community Rescue Center, Hub A",
+            "contact": "+91 94451 09876",
+            "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&auto=format&fit=crop&q=60",
+            "status": "NGO Assigned",
+            "assignedNgo": "Care-Share Community Kitchens",
+            "distance": "1.2 km",
+            "timestamp": "2026-06-11T03:58:00.971858Z",
+            "co2Saved": 15.8
+        },
+        {
+            "id": "fs-donation-1781150536840",
+            "foodName": "Rice",
+            "quantity": 35,
+            "foodType": "Vegetarian Meals",
+            "expiryTime": "Expires in 4 Hours",
+            "location": "Anna Nagar, Chennai",
+            "contact": "+91 98402 12345",
+            "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&auto=format&fit=crop&q=60",
+            "status": "NGO Assigned",
+            "assignedNgo": "Care-Share Community Kitchens",
+            "distance": "1.2 km",
+            "timestamp": "2026-06-11T04:02:16.849556Z",
+            "co2Saved": 15.8
+        }
+    ],
+    "predictions": [],
+    "pickup_requests": [
+        {
+            "id": "fs-pickup-1781147332507",
+            "donationId": "fs-donation-1781147332458",
+            "ngoId": "ngo-1",
+            "ngoName": "Care-Share Community Kitchens",
+            "status": "Scheduled",
+            "distance": "1.2 km",
+            "estimatedTime": "40 mins",
+            "timestamp": "2026-06-11T03:08:52.507403Z"
+        },
+        {
+            "id": "fs-pickup-1781149910403",
+            "donationId": "fs-donation-1781149910368",
+            "ngoId": "ngo-1",
+            "ngoName": "Care-Share Community Kitchens",
+            "status": "Scheduled",
+            "distance": "1.2 km",
+            "estimatedTime": "40 mins",
+            "timestamp": "2026-06-11T03:51:50.405293Z"
+        },
+        {
+            "id": "fs-pickup-1781149946358",
+            "donationId": "fs-donation-1781149946345",
+            "ngoId": "ngo-1",
+            "ngoName": "Care-Share Community Kitchens",
+            "status": "Scheduled",
+            "distance": "1.2 km",
+            "estimatedTime": "40 mins",
+            "timestamp": "2026-06-11T03:52:26.358517Z"
+        },
+        {
+            "id": "fs-pickup-1781150210781",
+            "donationId": "fs-donation-1781150210770",
+            "ngoId": "ngo-1",
+            "ngoName": "Care-Share Community Kitchens",
+            "status": "Scheduled",
+            "distance": "1.2 km",
+            "estimatedTime": "40 mins",
+            "timestamp": "2026-06-11T03:56:50.781317Z"
+        },
+        {
+            "id": "fs-pickup-1781150280992",
+            "donationId": "fs-donation-1781150280971",
+            "ngoId": "ngo-1",
+            "ngoName": "Care-Share Community Kitchens",
+            "status": "Scheduled",
+            "distance": "1.2 km",
+            "estimatedTime": "40 mins",
+            "timestamp": "2026-06-11T03:58:00.992351Z"
+        },
+        {
+            "id": "fs-pickup-1781150536892",
+            "donationId": "fs-donation-1781150536840",
+            "ngoId": "ngo-1",
+            "ngoName": "Care-Share Community Kitchens",
+            "status": "Scheduled",
+            "distance": "1.2 km",
+            "estimatedTime": "40 mins",
+            "timestamp": "2026-06-11T04:02:16.892539Z"
+        }
+    ],
+    "notifications": [
+        {
+            "id": "fs-notify-1781147332513",
+            "title": "Edible Resource Rescued!",
+            "message": "Successfully posted 44 portions of 'curdrice'. Dispatched to closest logistics partner: Care-Share Community Kitchens (1.2 km away).",
+            "timestamp": "2026-06-11T03:08:52.513898Z",
+            "type": "donation"
+        },
+        {
+            "id": "fs-notify-1781149910413",
+            "title": "Edible Resource Rescued!",
+            "message": "Successfully posted 30 portions of 'Lemon Rice'. Dispatched to closest logistics partner: Care-Share Community Kitchens (1.2 km away).",
+            "timestamp": "2026-06-11T03:51:50.415034Z",
+            "type": "donation"
+        },
+        {
+            "id": "fs-notify-1781149946369",
+            "title": "Edible Resource Rescued!",
+            "message": "Successfully posted 35 portions of 'Saved Excess 35 Kg (70 Meals) - Wedding Hall'. Dispatched to closest logistics partner: Care-Share Community Kitchens (1.2 km away).",
+            "timestamp": "2026-06-11T03:52:26.370014Z",
+            "type": "donation"
+        },
+        {
+            "id": "fs-notify-1781150003077",
+            "title": "Shipment Status: En-Route",
+            "message": "Donation parcel 'curdrice' has transitioned to: En-Route.",
+            "timestamp": "2026-06-11T03:53:23.086863Z",
+            "type": "transition"
+        },
+        {
+            "id": "fs-notify-1781150210797",
+            "title": "Edible Resource Rescued!",
+            "message": "Successfully posted 30 portions of 'Biriyani'. Dispatched to closest logistics partner: Care-Share Community Kitchens (1.2 km away).",
+            "timestamp": "2026-06-11T03:56:50.797638Z",
+            "type": "donation"
+        },
+        {
+            "id": "fs-notify-1781150281006",
+            "title": "Edible Resource Rescued!",
+            "message": "Successfully posted 35 portions of 'Saved Excess 35 Kg (70 Meals) - Wedding Hall'. Dispatched to closest logistics partner: Care-Share Community Kitchens (1.2 km away).",
+            "timestamp": "2026-06-11T03:58:01.006376Z",
+            "type": "donation"
+        },
+        {
+            "id": "fs-notify-1781150536906",
+            "title": "Edible Resource Rescued!",
+            "message": "Successfully posted 35 portions of 'Rice'. Dispatched to closest logistics partner: Care-Share Community Kitchens (1.2 km away).",
+            "timestamp": "2026-06-11T04:02:16.906593Z",
+            "type": "donation"
+        }
+    ],
+    "predictions_history": [
+        {
+            "id": "surplus_1781111775978",
+            "timestamp": "2026-06-10T22:46:15.978509",
+            "sourceType": "Wedding Hall",
+            "expectedGuests": 500,
+            "confirmedGuests": 450,
+            "predictedSurplusFood": 35.0,
+            "estimatedMealsAvailable": 70,
+            "estimatedPeopleCanBeFed": 70,
+            "confidence": 93,
+            "risk": "High",
+            "recommendation": "Approximately 35.0 Kg of food may remain unused. This food can feed approximately 70 people. Initiate donation process immediately.",
+            "type": "surplus"
+        },
+        {
+            "id": "surplus_1781147397557",
+            "timestamp": "2026-06-11T08:39:57.557644",
+            "sourceType": "Wedding Hall",
+            "expectedGuests": 500,
+            "confirmedGuests": 450,
+            "predictedSurplusFood": 35.0,
+            "estimatedMealsAvailable": 70,
+            "estimatedPeopleCanBeFed": 70,
+            "confidence": 93,
+            "risk": "High",
+            "recommendation": "Approximately 35.0 Kg of food may remain unused. This food can feed approximately 70 people. Initiate donation process immediately.",
+            "type": "surplus"
+        },
+        {
+            "id": "surplus_1781147556083",
+            "timestamp": "2026-06-11T08:42:36.083440",
+            "sourceType": "Wedding Hall",
+            "expectedGuests": 500,
+            "confirmedGuests": 450,
+            "predictedSurplusFood": 35.0,
+            "estimatedMealsAvailable": 70,
+            "estimatedPeopleCanBeFed": 70,
+            "confidence": 93,
+            "risk": "High",
+            "recommendation": "Approximately 35.0 Kg of food may remain unused. This food can feed approximately 70 people. Initiate donation process immediately.",
+            "type": "surplus"
+        },
+        {
+            "id": "surplus_1781148046771",
+            "timestamp": "2026-06-11T08:50:46.771790",
+            "sourceType": "Wedding Hall",
+            "expectedGuests": 500,
+            "confirmedGuests": 450,
+            "predictedSurplusFood": 35.0,
+            "estimatedMealsAvailable": 70,
+            "estimatedPeopleCanBeFed": 70,
+            "confidence": 93,
+            "risk": "High",
+            "recommendation": "Approximately 35.0 Kg of food may remain unused. This food can feed approximately 70 people. Initiate donation process immediately.",
+            "type": "surplus"
+        }
+    ]
+}
